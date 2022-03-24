@@ -90,9 +90,44 @@ const removeDuplicates = (nums) => {
   }
   return nums.length;
 }
-const n1 = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
-removeDuplicates(n1);
-console.log(n1)
-const n2 = [39,39,40,41,41];
-removeDuplicates(n2);
-console.log(n2)
+var findMedianSortedArrays = function(nums1, nums2) {
+  const unionArray = [...nums1, ...nums2].sort((a, b) => a < b ? -1 : 1);
+  const length = unionArray.length;
+  const isOneMedian = length % 2 !== 0;
+  if (isOneMedian) return unionArray[(length - 1) / 2];
+  const firstNum = unionArray[(length) / 2];
+  const secondNum = unionArray[(length) / 2 - 1];
+  return (firstNum + secondNum) / 2;
+};
+
+var removeElement = function(nums, val) {
+  for ( let i = 0; i < nums.length; i){
+    if(nums[i] === val) {
+      nums.splice(i, 1);
+    } else {
+      i++;
+    }
+  }
+  return nums.length;
+};
+var strStr = function(haystack, needle) {
+  return haystack.indexOf(needle);
+};
+var searchInsert = function(nums, target) {
+  let i = 0;
+  while (i < nums.length) {
+    if (nums[i] === target) return i;
+    if (nums[i] > target) return i;
+    i++;
+  }
+  return i;
+};
+var maxSubArray = function(nums) {
+
+};
+const nums = [-2,1,-3,4,-1,2,1,-5,4];
+const nums2 = [1];
+const nums3 = [5,4,-1,7,8];
+console.log(maxSubArray(nums)); // 6
+console.log(maxSubArray(nums2)); // 1
+console.log(maxSubArray(nums3)); // 23
