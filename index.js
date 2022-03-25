@@ -143,7 +143,18 @@ var lengthOfLastWord = function(s) {
   const indexOf = str.indexOf(' ');
   return indexOf === -1 ? str.length : indexOf;
 };
-const s = "a";
-const s2 = "   fly me   to   the moon  "
-console.log(lengthOfLastWord(s)); // 5
-console.log(lengthOfLastWord(s2)); // 4
+var maxSubArray2 = function(nums) {
+  let currentSum = 0;
+  let maxSumRange = - Infinity;
+  for(let i = 0; i < nums.length; i++) {
+    currentSum = currentSum + nums[i];
+    if (currentSum > maxSumRange) {
+      maxSumRange = currentSum
+    }
+   if (currentSum < 0) {
+     currentSum = 0
+   }
+  }
+  return maxSumRange;
+};
+console.log(maxSubArray2([-2,1,-3,4,-1,2,1,-5,4])); // 6
