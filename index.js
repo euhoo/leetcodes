@@ -145,16 +145,106 @@ var lengthOfLastWord = function(s) {
 };
 var maxSubArray2 = function(nums) {
   let currentSum = 0;
-  let maxSumRange = - Infinity;
-  for(let i = 0; i < nums.length; i++) {
+  let maxSumRange = -Infinity;
+  for (let i = 0; i < nums.length; i++) {
     currentSum = currentSum + nums[i];
     if (currentSum > maxSumRange) {
       maxSumRange = currentSum
     }
-   if (currentSum < 0) {
-     currentSum = 0
-   }
+    if (currentSum < 0) {
+      currentSum = 0
+    }
   }
   return maxSumRange;
 };
-console.log(maxSubArray2([-2,1,-3,4,-1,2,1,-5,4])); // 6
+var plusOne = function(digits) {
+  for (let i = digits.length - 1; i >= 0; i--) {
+    const current = digits[i];
+    if (current === 9) {
+      digits[i] = 0;
+      if (i === 0) {
+        digits.unshift(1);
+        break;
+      }
+    } else {
+      digits[i] += 1;
+      break;
+    }
+  }
+  return digits;
+};
+
+var addBinary = function(a, b) {
+  const diff = a.length - b.length;
+  const left = diff > 0 ? a : '0'.repeat(Math.abs(diff)) + a;
+  const right = diff < 0 ? b : '0'.repeat(Math.abs(diff)) + b;
+  const length = right.length;
+  let res = '';
+  const map = {
+    '00': '0',
+    '10': '1',
+    '01': '1',
+    '11': '0',
+  }
+  let plusOne = false;
+  for (let i = length - 1; i >= 0; i--) {
+    const l = left[i];
+    const r = right[i];
+    const sum = l + r;
+    const currentRes = map[sum];
+    const sumPlusOne = plusOne ? '1' + currentRes : '0' + currentRes
+    const resWithPlusOne = map[sumPlusOne]
+    plusOne = sum === '11' || sumPlusOne === '11';
+    res = `${resWithPlusOne}${res}`
+  }
+  if (plusOne) res = `1${res}`
+  return res;
+};
+var mySqrt = function(x) {
+  for (let i = 1; i < 65537; i++) {
+    if (i * i > x) return i - 1;
+  }
+};
+var climbStairs = function(n) {
+  let nMinus2Res = 0;
+  let nMinus1Res = 1;
+  if (n === 0) return 0;
+  if (n === 1) return nMinus1Res;
+  for (let i = 1; i < 46; i++) {
+    const newNMinus1 = nMinus1Res + nMinus2Res;
+    if (i === n) return newNMinus1;
+    nMinus2Res = nMinus1Res;
+    nMinus1Res = newNMinus1
+  }
+};
+var tribonacci = function(n) {
+  let nMinus3Res = 0;
+  let nMinus2Res = 1;
+  let nMinus1Res = 1;
+  if (n === 0) return 0;
+  if (n === 1) return 1;
+  if (n === 2) return 1;
+  for (let i = 3; i < 38; i++) {
+    const newNMinus1 = nMinus1Res + nMinus2Res + nMinus3Res;
+    if (i === n) return newNMinus1;
+    nMinus3Res = nMinus2Res;
+    nMinus2Res = nMinus1Res;
+    nMinus1Res = newNMinus1
+  }
+};
+var fib = function(n) {
+  let nMinus2Res = 0;
+  let nMinus1Res = 1;
+  if (n === 0) return 0;
+  if (n === 1) return nMinus1Res;
+  if (n === 2) return nMinus1Res;
+  for (let i = 2; i < 46; i++) {
+    const newNMinus1 = nMinus1Res + nMinus2Res;
+    if (i === n) return newNMinus1;
+    nMinus2Res = nMinus1Res;
+    nMinus1Res = newNMinus1
+  }
+};
+console.log(fib(3)); // 13
+console.log(tribonacci(4)); // 13
+console.log(tribonacci(25)); // 13
