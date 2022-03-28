@@ -245,6 +245,16 @@ var fib = function(n) {
     nMinus1Res = newNMinus1
   }
 };
-console.log(fib(3)); // 13
-console.log(tribonacci(4)); // 13
-console.log(tribonacci(25)); // 13
+var merge = function(nums1, m, nums2, n) {
+  for (let i = 0; i < n; i++) {
+    nums1[i + m] = nums2[i]
+  }
+  nums1.sort((a, b) => a < b ? -1 : 1)
+};
+var sortedSquares = function(nums) {
+  return nums.map(n => n * n).sort((a, b) => a < b ? -1 : 1);
+};
+const nums1 = [-4, -1, 0, 3, 10];
+const nums2 = [-7, -3, 2, 3, 11];
+console.log(sortedSquares(nums1)); //[0,1,9,16,100]
+console.log(sortedSquares(nums2)); //[4,9,9,49,121]
