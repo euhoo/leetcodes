@@ -254,7 +254,88 @@ var merge = function(nums1, m, nums2, n) {
 var sortedSquares = function(nums) {
   return nums.map(n => n * n).sort((a, b) => a < b ? -1 : 1);
 };
-const nums1 = [-4, -1, 0, 3, 10];
-const nums2 = [-7, -3, 2, 3, 11];
-console.log(sortedSquares(nums1)); //[0,1,9,16,100]
-console.log(sortedSquares(nums2)); //[4,9,9,49,121]
+var maxProfit = function(prices) {
+  let maxProfit = 0;
+  if (prices.length === 0) return 0;
+  let leftMarker = prices[0];
+  for (let i = 0; i < prices.length; i++) {
+    const price = prices[i];
+    if (leftMarker > price) {
+      leftMarker = price;
+    } else {
+      const currentProfit = price - leftMarker;
+      maxProfit = maxProfit > currentProfit ? maxProfit : currentProfit;
+    }
+  }
+  return maxProfit;
+};
+var maximumDifference = function(nums) {
+  let maxProfit = -1;
+  if (nums.length === 0 || nums.length === 1) return maxProfit;
+  let leftMarker = nums[0];
+  for (let i = 1; i < nums.length; i++) {
+    const price = nums[i];
+    if (leftMarker >= price) {
+      leftMarker = price;
+    } else {
+      const currentProfit = price - leftMarker;
+      maxProfit = maxProfit > currentProfit ? maxProfit : currentProfit;
+    }
+  }
+  return maxProfit;
+};
+var isValidPalindrome = function(s) {
+  const str = s.replace(/[^a-zA-ZА-Яа-яЁё0-9]/gi, '').toLowerCase();
+  console.log(str);
+  if (!str) return true;
+  for (let i = 0; i <= Math.floor(str.length); i++) {
+    if (str[i] !== str[str.length - 1 - i]) return false;
+  }
+  return true
+};
+var firstPalindrome = function(words) {
+  const isPalindrome = str => {
+    if (!str) return true;
+    for (let i = 0; i <= Math.floor(str.length); i++) {
+      if (str[i] !== str[str.length - 1 - i]) return false;
+    }
+    return true;
+  }
+  for (let j = 0; j < words.length; j++) {
+    if (isPalindrome(words[j])) return words[j]
+  }
+  return '';
+};
+var truncateSentence = function(s, k) {
+  const arr = s.split(' ')
+  if (arr.length <= k) return s;
+  return arr.filter((w, i) => i < k).join(' ');
+};
+var singleNumber = function(nums) {
+  const map = new Map();
+  nums.forEach((num) => {
+    if (map.has(num)) {
+      return map.delete(num);
+    }
+    map.set(num, true)
+  })
+  let res;
+  map.forEach((v, k) => {
+    if (v) res = k
+  })
+  return res
+};
+var missingNumber = function(nums) {
+  nums.sort((a, b) => a - b < 0 ? -1 : 1)
+  for (let i = 0; i < nums.length; i++) {
+    if(nums[i] !== i) return i
+  }
+  return nums.length
+};
+const nums = [3, 0, 1]
+const nums2 = [0, 1]
+const nums3 = [9, 6, 4, 2, 3, 5, 7, 0, 1]
+
+console.log(missingNumber(nums)); // 2
+console.log(missingNumber(nums2)); // 2
+console.log(missingNumber(nums3)); // 8
