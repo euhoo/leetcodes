@@ -326,16 +326,36 @@ var singleNumber = function(nums) {
   return res
 };
 var missingNumber = function(nums) {
-  nums.sort((a, b) => a - b < 0 ? -1 : 1)
-  for (let i = 0; i < nums.length; i++) {
-    if(nums[i] !== i) return i
-  }
-  return nums.length
+  const l = nums.length;
+  const sum = (l + 1) / 2 * l;
+  const currentSum = nums.reduce((acc, current) => acc + current, 0);
+  return sum - currentSum;
 };
-const nums = [3, 0, 1]
-const nums2 = [0, 1]
-const nums3 = [9, 6, 4, 2, 3, 5, 7, 0, 1]
+var singleNumber2 = function(nums) {
+  const map = new Map();
+  nums.forEach((num) => {
+    if (map.has(num)) {
+      return map.set(num, false);
+    }
+    map.set(num, true)
+  })
+  let res = [];
+  map.forEach((v, k) => {
+    if (v) res.push(k)
+  })
+  return res
+};
+var moveZeroes = function(nums) {
+  let counter = nums.length;
+  for (let i = 0; i < counter; i) {
+    if (nums[i] === 0) {
+      nums.splice(i, 1)
+      nums.push(0)
+      counter -= 1;
+    } else {
+      i += 1
+    }
+  }
+};
 
-console.log(missingNumber(nums)); // 2
-console.log(missingNumber(nums2)); // 2
-console.log(missingNumber(nums3)); // 8
+
