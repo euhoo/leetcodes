@@ -17,7 +17,7 @@ const uncapitalize = str => {
     .join(' ')
 };
 
-console.log(uncapitalize(inputData1));
+// console.log(uncapitalize(inputData1));
 
 /**
  * Task 2: Find the most frequent item of an array
@@ -64,5 +64,5 @@ const mostFreqSymb2 = arr => {
   return `${maxSymb} ( ${maxFreq} times )`;
 }
 const inputData2 = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
-console.log(mostFreqSymb2(inputData2));
+// console.log(mostFreqSymb2(inputData2));
 

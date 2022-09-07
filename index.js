@@ -358,4 +358,25 @@ var moveZeroes = function(nums) {
   }
 };
 
+var reverseBits = function(num) {
+  const n = num.toString()
+  console.log(n);
 
+  const l = n.length;
+  let sum = 0;
+  for (let i = 0; i < l; i++) {
+    const index = l - i - 1
+    const symb = n[index];
+    if (symb === '1') {
+      const currentSum = Math.pow(2, index);
+      sum += currentSum;
+    }
+  }
+  return sum
+};
+
+const n = 00000010100101000001111010011100;
+const n2 = '00000000000000000000000000001011';
+
+console.log(reverseBits(n)); // 964176192 (00111001011110000010100101000000)
+// console.log(reverseBits(n2)); // 964176192 (00111001011110000010100101000000)
