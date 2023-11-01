@@ -24,10 +24,22 @@ export const twoSum = (nums: number[], target: number): number[] => {
   
 // 30.11.2023
 const twoSum2 = (nums: number[], target: number): number[] =>{
+  const map = new Map();
   const res = [];
-  // const map = new Set(Object.values(nums))
+  for(let i = 0; i < nums.length; i++) {
+    const num = nums[i];
+    const numPair = target - num;
+    if (map.has(numPair)){
+      return [map.get(numPair), i]
+    }
+    if (!map.has(num)) {
+      map.set(num, i)
+    }
+  }
   return res;
 };
+
+
 export const twoSumData: DataI<FuncT> = {
 funcs: [twoSum, twoSum2],
 description:
