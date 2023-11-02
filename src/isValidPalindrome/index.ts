@@ -1,4 +1,4 @@
-var isValidPalindrome = function(s) {
+const isValidPalindrome = (s: string): boolean => {
     const str = s.replace(/[^a-zA-ZА-Яа-яЁё0-9]/gi, '').toLowerCase();
     console.log(str);
     if (!str) return true;

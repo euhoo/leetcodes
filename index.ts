@@ -1,4 +1,3 @@
-import { twoSumData } from "./src/twoSum";
+import { groupAnagrams } from "./src/groupAnagrams";
 
-const func = twoSumData.funcs[1];
-console.log(func([3,2,3,4], 6))
+console.log(groupAnagrams(["eat","tea","tan","ate","nat","bat"]))
