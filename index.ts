@@ -1,7 +1,7 @@
-import { mostFrequentEven } from "./src/mostFrequentEven";
+import { isHappy } from "./src/isHappy";
 
-const data = [0,1,2,2,4,4,1]
-const res = mostFrequentEven(data);
+const data = 19
+const res = isHappy(data);
 console.log('res', res)
 
 // Решал ранее
@@ -25,7 +25,10 @@ console.log('res', res)
 // https://leetcode.com/problems/climbing-stairs/description/
 // https://leetcode.com/problems/majority-element/description/
 // https://leetcode.com/problems/majority-element-ii/description/
-
+// https://leetcode.com/problems/most-frequent-even-element/description/
+// https://leetcode.com/problems/reverse-bits/description/
+// https://leetcode.com/problems/number-of-1-bits/description/
+// https://leetcode.com/problems/happy-number/submissions/
 
 
 // Не решено
