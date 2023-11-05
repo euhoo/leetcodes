@@ -1,8 +1,12 @@
-import { isHappy } from "./src/isHappy";
+import { containsNearbyAlmostDuplicate } from "./src/containsNearbyAlmostDuplicate";
+import { containsNearbyAlmostDuplicateData } from "./src/containsNearbyAlmostDuplicate/as";
 
-const data = 19
-const res = isHappy(data);
+const data = [1,5,9,1,5,9,]
+const time = Date.now();
+const res = containsNearbyAlmostDuplicate(data, 2, 3)
 console.log('res', res)
+const time2 = Date.now();
+// console.log('time', time2 - time)
 
 // Решал ранее
 // https://leetcode.com/problems/valid-parentheses/
@@ -29,6 +33,8 @@ console.log('res', res)
 // https://leetcode.com/problems/reverse-bits/description/
 // https://leetcode.com/problems/number-of-1-bits/description/
 // https://leetcode.com/problems/happy-number/submissions/
+// https://leetcode.com/problems/contains-duplicate/description/
+// https://leetcode.com/problems/contains-duplicate-ii/
 
 
 // Не решено
