@@ -1,18 +1,32 @@
-import { containsNearbyAlmostDuplicate } from "./src/containsNearbyAlmostDuplicate";
-import { containsNearbyAlmostDuplicateData } from "./src/containsNearbyAlmostDuplicate/as";
+import { solveSudoku } from "./src/solveSudoku";
 
-const data = [1,5,9,1,5,9,]
+const board = [
+    ["5","3",".",".","7",".",".",".","."],
+    ["6",".",".","1","9","5",".",".","."],
+    [".","9","8",".",".",".",".","6","."],
+    ["8",".",".",".","6",".",".",".","3"],
+    ["4",".",".","8",".","3",".",".","1"],
+    ["7",".",".",".","2",".",".",".","6"],
+    [".","6",".",".",".",".","2","8","."],
+    [".",".",".","4","1","9",".",".","5"],
+    [".",".",".",".","8",".",".","7","9"],
+]
+const board2 = [
+    [".",".","9","7","4","8",".",".","."],
+    ["7",".",".",".",".",".",".",".","."],
+    [".","2",".","1",".","9",".",".","."],
+    [".",".","7",".",".",".","2","4","."],
+    [".","6","4",".","1",".","5","9","."],
+    [".","9","8",".",".",".","3",".","."],
+    [".",".",".","8",".","3",".","2","."],
+    [".",".",".",".",".",".",".",".","6"],
+    [".",".",".","2","7","5","9",".","."],
+]
 const time = Date.now();
-const res = containsNearbyAlmostDuplicate(data, 2, 3)
-console.log('res', res)
+const res = solveSudoku(board2)
+console.log('GG')
 const time2 = Date.now();
-// console.log('time', time2 - time)
-
-// Решал ранее
-// https://leetcode.com/problems/valid-parentheses/
-// https://leetcode.com/problems/merge-sorted-array/
-// https://leetcode.com/problems/remove-element/
-// https://leetcode.com/problems/move-zeroes/
+console.log('time', time2 - time)
 
 // Решено
 // https://leetcode.com/problems/implement-queue-using-stacks/
@@ -35,7 +49,11 @@ const time2 = Date.now();
 // https://leetcode.com/problems/happy-number/submissions/
 // https://leetcode.com/problems/contains-duplicate/description/
 // https://leetcode.com/problems/contains-duplicate-ii/
-
+// https://leetcode.com/problems/merge-sorted-array/
+// https://leetcode.com/problems/valid-parentheses/
+// https://leetcode.com/problems/remove-element/
+// https://leetcode.com/problems/move-zeroes/
+// https://leetcode.com/problems/sudoku-solver/description/
 
 // Не решено
 // https://leetcode.com/problems/binary-tree-paths/
