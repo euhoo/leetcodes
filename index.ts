@@ -1,32 +1,12 @@
-import { solveSudoku } from "./src/solveSudoku";
+import { generate } from "./src/generate";
 
-const board = [
-    ["5","3",".",".","7",".",".",".","."],
-    ["6",".",".","1","9","5",".",".","."],
-    [".","9","8",".",".",".",".","6","."],
-    ["8",".",".",".","6",".",".",".","3"],
-    ["4",".",".","8",".","3",".",".","1"],
-    ["7",".",".",".","2",".",".",".","6"],
-    [".","6",".",".",".",".","2","8","."],
-    [".",".",".","4","1","9",".",".","5"],
-    [".",".",".",".","8",".",".","7","9"],
-]
-const board2 = [
-    [".",".","9","7","4","8",".",".","."],
-    ["7",".",".",".",".",".",".",".","."],
-    [".","2",".","1",".","9",".",".","."],
-    [".",".","7",".",".",".","2","4","."],
-    [".","6","4",".","1",".","5","9","."],
-    [".","9","8",".",".",".","3",".","."],
-    [".",".",".","8",".","3",".","2","."],
-    [".",".",".",".",".",".",".",".","6"],
-    [".",".",".","2","7","5","9",".","."],
-]
-const time = Date.now();
-const res = solveSudoku(board2)
-console.log('GG')
-const time2 = Date.now();
-console.log('time', time2 - time)
+// const time = Date.now();
+const res = generate(5);
+console.log('res', res)
+
+// console.log('GG')
+// const time2 = Date.now();
+// console.log('time', time2 - time)
 
 // Решено
 // https://leetcode.com/problems/implement-queue-using-stacks/
@@ -54,6 +34,9 @@ console.log('time', time2 - time)
 // https://leetcode.com/problems/remove-element/
 // https://leetcode.com/problems/move-zeroes/
 // https://leetcode.com/problems/sudoku-solver/description/
+// https://leetcode.com/problems/fibonacci-number/description/
+// https://leetcode.com/problems/n-th-tribonacci-number/description/
+// https://leetcode.com/problems/pascals-triangle/description/
 
 // Не решено
 // https://leetcode.com/problems/binary-tree-paths/
